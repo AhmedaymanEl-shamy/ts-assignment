@@ -15,19 +15,14 @@ class User {
         this.password = password;
         this.phoneNumber = phoneNumber;
         this._age = _age;
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this._age = _age;
+        this.age = _age;
     }
     get age() {
         return this._age;
     }
     set age(value) {
         if (value < 18 || value > 60)
-            throw new Error("incalid age");
+            throw new Error("invalid age");
         this._age = value;
     }
     displayInfo() {
@@ -93,3 +88,4 @@ console.log(note1.preview());
 const noteStorage = new Storages();
 noteStorage.addItems(note1);
 console.log(noteStorage.getAllItems());
+console.log(user1.age);

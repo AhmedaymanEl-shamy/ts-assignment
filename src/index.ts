@@ -8,12 +8,7 @@ class User {
     protected phoneNumber: string,
     private _age: number,
   ) {
-    this.id = id;
-    this.name = name;
-    this.email = email;
-    this.password = password;
-    this.phoneNumber = phoneNumber;
-    this._age = _age;
+    this.age = _age
   }
 
   get age(): number {
@@ -21,7 +16,7 @@ class User {
   }
 
   set age(value: number) {
-    if (value < 18 || value > 60) throw new Error("incalid age")
+    if (value < 18 || value > 60) throw new Error("invalid age")
       
       this._age = value;
   }
@@ -130,3 +125,7 @@ const noteStorage = new Storages<Note>();
 noteStorage.addItems(note1);
 
 console.log(noteStorage.getAllItems());
+
+console.log(user1.age);
+
+
